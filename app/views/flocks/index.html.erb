@@ -6,7 +6,7 @@
   <div class="col-9">
   <div class="d-flex justify-content-between align-items-center mt-5">
     <h1 class="display-6">Flocks</h1>
-    <%= link_to 'New Flock', new_flock_path, class: 'btn btn-primary'  %>
+    <%= link_to 'New Flock', new_flock_path, class: 'btn btn-primary text-light'  %>
   </div>
 
   <div class="table-responsive">
@@ -44,9 +44,9 @@
           <td class="text-center"><%= flock.age %></td>
           <td class="text-center"><%= flock.notes %></td>
           <td class="text-center"><%= flock.status.name %></td>
-          <td><%= link_to 'Show', flock, class: 'btn btn-sm btn-success' %></td>
-          <td><%= link_to 'Edit', edit_flock_path(flock), class: 'btn btn-sm btn-secondary' %></td>
-          <td><%= link_to 'Destroy', flock, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %></td>
+          <td><%= link_to 'Show', flock, class: 'btn btn-sm btn-success text-light' %></td>
+          <td><%= link_to 'Edit', edit_flock_path(flock), class: 'btn btn-sm btn-secondary text-light' %></td>
+          <td><%= link_to 'Destroy', flock, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger text-light' %></td>
         </tr>
       <% end %>
     </tbody>
