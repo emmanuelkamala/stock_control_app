@@ -1,9 +1,18 @@
-<p id="notice"><%= notice %></p>
+<%= render 'layouts/navigation' %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @status.name %>
-</p>
+<div class="container">
+  <div class="card col-md-6 mt-5 mx-auto">
+    <div class="card-body">
 
-<%= link_to 'Edit', edit_status_path(@status) %> |
-<%= link_to 'Back', statuses_path %>
+      <p id="notice"><%= notice %></p>
+
+      <p>
+        <strong>Name:</strong>
+        <%= @status.name %>
+      </p>
+
+      <%= link_to 'Edit', edit_status_path(@status), class: 'btn btn-success text-light' %> |
+      <%= link_to 'Back', statuses_path, class: 'btn btn-secondary text-light' %>
+    </div>
+  </div>
+</div>

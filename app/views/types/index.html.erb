@@ -1,27 +1,38 @@
-<p id="notice"><%= notice %></p>
+<%= render 'layouts/navigation' %>
+<div class="row">
+  <div class="col-2 text-center mt-2">
+    <%= render 'layouts/sidebar' %>
+  </div>
 
-<h1>Types</h1>
+  
+  <div class="col-9">
+    <div class="d-flex justify-content-between align-items-center mt-5">
+      <h1 class="display-6">Flock Types</h1>
+      <%= link_to 'Add Flock Type', new_type_path, class: 'btn btn-primary text-light' %>
+    </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="text-center" scope="col">Name</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
 
-  <tbody>
-    <% @types.each do |type| %>
-      <tr>
-        <td><%= type.name %></td>
-        <td><%= link_to 'Show', type %></td>
-        <td><%= link_to 'Edit', edit_type_path(type) %></td>
-        <td><%= link_to 'Destroy', type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <tbody>
+        <% @types.each do |type| %>
+          <tr>
+            <td class="text-center"><%= type.name %></td>
+            <td><%= link_to 'Show', type, class: 'btn btn-sm btn-success text-light' %></td>
+            <td><%= link_to 'Edit', edit_type_path(type), class: 'btn btn-sm btn-secondary text-light' %></td>
+            <td><%= link_to 'Destroy', type, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger text-light' %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
 
-<br>
-
-<%= link_to 'New Type', new_type_path %>
+    </div>
+  <br>
+  </div>
+</div>

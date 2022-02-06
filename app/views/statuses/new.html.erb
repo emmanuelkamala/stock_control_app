@@ -1,5 +1,14 @@
-<h1>New Status</h1>
 
-<%= render 'form', status: @status %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <div class="d-flex justify-content-between align-items-center">
+        <h1 class="display-6 mt-3">Create Status</h1>
+        <%= link_to '<< Back', statuses_path, class: 'btn btn-secondary mt-3 text-light' %>
+      </div>
 
-<%= link_to 'Back', statuses_path %>
+      <%= render 'form', status: @status %>
+      
+    </div>
+  </div>
+</div>

@@ -1,5 +1,15 @@
-<h1>New Type</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <div class="d-flex justify-content-between align-items-center">
+        <h1 class="display-6 mt-3">Create Flock Type</h1>
+        <%= link_to '<< Back', types_path, class: 'btn btn-secondary mt-3 text-light' %>
+      </div>
 
-<%= render 'form', type: @type %>
+      <%= render 'form', type: @type %>
+      
+    </div>
+  </div>
+</div>
 
-<%= link_to 'Back', types_path %>
+
