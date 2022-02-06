@@ -1,0 +1,48 @@
+<%= render 'layouts/navigation' %>
+
+<div class="container">
+  <div class="card col-md-6 mt-5 mx-auto">
+    <div class="card-body">
+
+      <p id="notice"><%= notice %></p>
+
+      <p>
+        <strong>Date:</strong>
+        <%= @income.date %>
+      </p>
+
+      <p>
+        <strong>Category:</strong>
+        <%= @income.category %>
+      </p>
+
+      <p>
+        <strong>Quantity:</strong>
+        <%= @income.quantity %>
+      </p>
+
+      <p>
+        <strong>Unit Price:</strong>
+        <%= @income.unit_price %>
+      </p>
+
+      <p>
+        <strong>Total amount:</strong>
+        <%= @income.amount %>
+      </p>
+
+      <p>
+        <strong>Description:</strong>
+        <%= @income.description %>
+      </p>
+
+      <p>
+        <strong>Flock:</strong>
+        <%= @income.type.name %>
+      </p>
+
+      <%= link_to 'Edit', edit_income_path(@income), class: 'btn btn-success' %> |
+      <%= link_to 'Back', incomes_path, class: 'btn btn-secondary' %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,68 @@
+<%= render 'layouts/navigation' %>
+
+<div class="container">
+  <div class="card mx-auto">
+    <div class="card-body"
+
+      <p id="notice"><%= notice %></p>
+
+      <p>
+        <strong>Batch no:</strong>
+        <%= @flock.batch_no %>
+      </p>
+
+      <p>
+        <strong>Date in:</strong>
+        <%= @flock.date_in %>
+      </p>
+
+      <p>
+        <strong>Expected retirement date:</strong>
+        <%= @flock.expected_retirement_date %>
+      </p>
+
+      <p>
+        <strong>Flock type:</strong>
+        <%= @flock.type.name %>
+      </p>
+
+      <p>
+        <strong>Source:</strong>
+        <%= @flock.source %>
+      </p>
+
+      <p>
+        <strong>Flock stored:</strong>
+        <%= @flock.flock_stored %>
+      </p>
+
+      <p>
+        <strong>Initial stock:</strong>
+        <%= @flock.initial_stock %>
+      </p>
+
+      <p>
+        <strong>Current stock:</strong>
+        <%= @flock.current_stock %>
+      </p>
+
+      <p>
+        <strong>Age:</strong>
+        <%= @flock.age %>
+      </p>
+
+      <p>
+        <strong>Notes:</strong>
+        <%= @flock.notes %>
+      </p>
+
+      <p>
+        <strong>Status:</strong>
+        <%= @flock.status.name %>
+      </p>
+
+      <%= link_to 'Edit', edit_flock_path(@flock), class: 'btn btn-primary' %> |
+      <%= link_to 'Back', flocks_path, class: 'btn btn-secondary' %>
+    </div>
+  </div>
+</div>

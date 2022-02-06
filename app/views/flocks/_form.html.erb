@@ -1,0 +1,77 @@
+<%= form_with(model: flock) do |form| %>
+  <% if flock.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(flock.errors.count, "error") %> prohibited this flock from being saved:</h2>
+
+      <ul>
+        <% flock.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field mb-3">
+    <%= form.label :batch_no %>
+    <%= form.text_field :batch_no, class: 'form-control' %>
+  </div>
+
+  <div class="field mb-3">
+    <%= form.label :date_in %>
+    <%= form.datetime_select :date_in, class: 'form-control' %>
+  </div>
+
+  <div class="field mb-3">
+    <%= form.label :expected_retirement_date %>
+    <%= form.datetime_select :expected_retirement_date, class: 'form-control' %>
+  </div>
+
+  <div class="field mb-3">
+    <%= form.label :flock_type %><br />
+    <%= form.collection_select :type_id, Type.all, :id, :name, prompt: true, class: 'form-control' %>
+  </div>
+
+  <div class="field mb-3">
+    <%= form.label :source %>
+    <%= form.text_field :source, class: 'form-control' %>
+  </div>
+
+  <div class="field mb-3">
+    <%= form.label :flock_stored %>
+    <%= form.text_field :flock_stored, class: 'form-control' %>
+  </div>
+
+  <div class="field mb-3">
+    <%= form.label :initial_stock %>
+    <%= form.text_field :initial_stock, class: 'form-control' %>
+  </div>
+
+  <div class="field mb-3">
+    <%= form.label :current_stock %>
+    <%= form.text_field :current_stock, class: 'form-control' %>
+  </div>
+
+  <div class="field mb-3">
+    <%= form.label :age %>
+    <%= form.text_field :age, class: 'form-control' %>
+  </div>
+
+  <div class="field mb-3">
+    <%= form.label :status %><br />
+    <%= form.collection_select :status_id, Status.all, :id, :name, prompt: true, class: 'form-control' %>
+   
+  </div>
+
+
+
+  <div class="field mb-3">
+    <%= form.label :notes %>
+    <%= form.text_area :notes, class: 'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Save Flock', class: 'btn btn-success' %>
+  </div>
+<% end %>
+
+<br />

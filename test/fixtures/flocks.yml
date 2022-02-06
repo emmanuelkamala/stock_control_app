@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  batch_no: 
+  date_in: 2021-12-19 00:21:44
+  expected_retirement_date: 2021-12-19 00:21:44
+  flock_type: MyString
+  source: MyString
+  flock_stored: MyString
+  initial_stock: 
+  current_stock: 
+  age: 
+  notes: MyText
+  status: MyString
+
+two:
+  batch_no: 
+  date_in: 2021-12-19 00:21:44
+  expected_retirement_date: 2021-12-19 00:21:44
+  flock_type: MyString
+  source: MyString
+  flock_stored: MyString
+  initial_stock: 
+  current_stock: 
+  age: 
+  notes: MyText
+  status: MyString

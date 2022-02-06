@@ -1,0 +1,70 @@
+<%= render 'layouts/navigation' %>
+<div class="row">
+  <div class="col-2 text-center mt-2">
+    <%= render 'layouts/sidebar' %>
+  </div>
+
+  <div class="col-9 mt-5">
+    <h3 class="display-6">Summary in the last 30 days</h3>
+    <div class="row">
+      <div class="card col-md-2 mx-2">
+        <h6 class="text-center card-header">Total Current Flock</h6>
+        <span class="text-center p-3"><strong><%= Flock.sum(:current_stock) %></strong></span>
+      </div>
+
+      <div class="card col-md-2 mx-1">
+        <h6 class="text-center card-header">Total Income</h6>
+        <span class="text-center p-3">
+          <strong><%= number_to_currency(@incomes.map(&:amount).sum, :unit => "Tshs. ", :delimiter => ",") %></strong>
+        </span>
+      </div>
+
+      <div class="card col-md-2 mx-1">
+        <h6 class="text-center card-header">Total Expenses</h6>
+        <span class="text-center p-3">
+          <strong><%= number_to_currency(@expenses.map(&:total).sum, :unit => "Tshs. ", :delimiter => ",") %></strong>
+        </span>
+      </div>
+
+      <div class="card col-md-2 mx-1">
+        <h6 class="text-center card-header">Profit</h6>
+        <span class="text-center p-3">
+
+          <% if @incomes.map(&:amount).sum > @expenses.map(&:total).sum %>
+            <span class="text-success">
+              <strong><%= number_to_currency(@incomes.map(&:amount).sum - @expenses.map(&:total).sum, :unit => "Tshs. ") %><strong>
+            </span>
+          <% else %>
+            <span class="text-danger"><strong> 0</strong></span>
+          <% end %>
+
+        </span>
+      </div>
+
+      <div class="card col-md-2 mx-1">
+        <h6 class="text-center card-header">Loss</h6>
+        <span class="text-center p-3">
+
+          <% if @incomes.map(&:amount).sum < @expenses.map(&:total).sum %>
+            <span class="text-danger">
+              <strong><%= number_to_currency(@expenses.map(&:total).sum - @incomes.map(&:amount).sum, :unit => "Tshs. ")  %><strong>
+            </span>
+          <% else %>
+            <span class="text-success"><strong>0</strong></span>
+          <% end %>
+
+        </span>
+      </div>
+
+    <div class="card mt-5">
+      <h4 class="p-4">Income Stats</h4>
+      <%= column_chart Income.group_by_day(:created_at).count %>
+    </div>
+
+    <div class="card mt-5">
+      <h4 class="p-4">Expenses Stats</h4>
+      <%= column_chart Expense.group_by_day(:created_at).count %>
+    </div>
+
+  <div>
+</div>

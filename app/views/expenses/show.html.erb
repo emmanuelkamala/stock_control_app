@@ -1,0 +1,48 @@
+<%= render 'layouts/navigation' %>
+
+<div class="container">
+  <div class="card col-md-6 mt-5 mx-auto">
+    <div class="card-body"
+
+      <p id="notice"><%= notice %></p>
+
+      <p>
+        <strong>Date:</strong>
+        <%= @expense.date %>
+      </p>
+
+      <p>
+        <strong>Category:</strong>
+        <%= @expense.category %>
+      </p>
+
+      <p>
+        <strong>Quantity:</strong>
+        <%= @expense.quantity %>
+      </p>
+
+      <p>
+        <strong>Quantity:</strong>
+        <%= @expense.unit_price %>
+      </p>
+
+      <p>
+        <strong>Total Expense:</strong>
+        <%= @expense.total %>
+      </p>
+
+      <p>
+        <strong>Description:</strong>
+        <%= @expense.description %>
+      </p>
+
+      <p>
+        <strong>Flock Type:</strong>
+        <%= @expense.type.name %>
+      </p>
+
+      <%= link_to 'Edit', edit_expense_path(@expense), class: 'btn btn-success' %> |
+      <%= link_to 'Back', expenses_path, class: 'btn btn-secondary' %>
+    </div>
+  </div>
+</div>
