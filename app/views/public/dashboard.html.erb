@@ -7,26 +7,26 @@
   <div class="col-9 mt-5">
     <h3 class="display-6">Summary in the last 30 days</h3>
     <div class="row">
-      <div class="card col-md-2 mx-2">
-        <h6 class="text-center card-header">Total Flock</h6>
+      <div class="card col-md-2 me-1">
+        <h6 class="text-center card-header">Total Current Flock</h6>
         <span class="text-center p-3"><strong><%= Flock.sum(:current_stock) %></strong></span>
       </div>
 
-      <div class="card col-md-2 mx-1">
+      <div class="card col-md-2 me-1">
         <h6 class="text-center card-header">Total Income</h6>
         <span class="text-center p-3">
           <strong><%= number_to_currency(@incomes.map(&:amount).sum, :unit => "Tshs. ", :delimiter => ",") %></strong>
         </span>
       </div>
 
-      <div class="card col-md-2 mx-1">
+      <div class="card col-md-2 me-1">
         <h6 class="text-center card-header">Total Expenses</h6>
         <span class="text-center p-3">
           <strong><%= number_to_currency(@expenses.map(&:total).sum, :unit => "Tshs. ", :delimiter => ",") %></strong>
         </span>
       </div>
 
-      <div class="card col-md-2 mx-1">
+      <div class="card col-md-2 me-1">
         <h6 class="text-center card-header">Profit</h6>
         <span class="text-center p-3">
 
@@ -41,7 +41,7 @@
         </span>
       </div>
 
-      <div class="card col-md-2 mx-1">
+      <div class="card col-md-2">
         <h6 class="text-center card-header">Loss</h6>
         <span class="text-center p-3">
 
