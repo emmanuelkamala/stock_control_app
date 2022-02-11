@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 2022_02_06_013311) do
     t.bigint "type_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "unit_price"
     t.index ["type_id"], name: "index_expenses_on_type_id"
   end
 
@@ -32,18 +31,16 @@ ActiveRecord::Schema.define(version: 2022_02_06_013311) do
     t.integer "batch_no"
     t.datetime "date_in"
     t.datetime "expected_retirement_date"
+    t.string "flock_type"
     t.string "source"
     t.string "flock_stored"
     t.integer "initial_stock"
     t.integer "current_stock"
     t.integer "age"
     t.text "notes"
+    t.string "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "status_id"
-    t.bigint "type_id"
-    t.index ["status_id"], name: "index_flocks_on_status_id"
-    t.index ["type_id"], name: "index_flocks_on_type_id"
   end
 
   create_table "incomes", force: :cascade do |t|
@@ -55,7 +52,6 @@ ActiveRecord::Schema.define(version: 2022_02_06_013311) do
     t.bigint "type_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "unit_price"
     t.index ["type_id"], name: "index_incomes_on_type_id"
   end
 
@@ -85,7 +81,5 @@ ActiveRecord::Schema.define(version: 2022_02_06_013311) do
   end
 
   add_foreign_key "expenses", "types"
-  add_foreign_key "flocks", "statuses"
-  add_foreign_key "flocks", "types"
   add_foreign_key "incomes", "types"
 end
