@@ -49,10 +49,8 @@ ActiveRecord::Schema.define(version: 2022_02_06_013311) do
     t.integer "quantity"
     t.integer "total_amount"
     t.text "description"
-    t.bigint "type_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["type_id"], name: "index_incomes_on_type_id"
   end
 
   create_table "statuses", force: :cascade do |t|
@@ -81,5 +79,4 @@ ActiveRecord::Schema.define(version: 2022_02_06_013311) do
   end
 
   add_foreign_key "expenses", "types"
-  add_foreign_key "incomes", "types"
 end
