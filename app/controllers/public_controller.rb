@@ -11,6 +11,8 @@ class PublicController < ApplicationController
   end
 
   def financial
+    # @search = IncomeSearch.new(params[:search])
+    # @incomes = @search.scope
   end
 
   def production

@@ -13,15 +13,6 @@
       <%= column_chart Income.group_by_day(:created_at).count %>
     </div>
 
-    <div>
-      <%= form_tag incomes_path, method: :get do %>
-        <%= text_field_tag 'search[date_from]', @search.date_from %>
-        <%= text_field_tag 'search[date_to]', @search.date_to %>
-        <%= submit_tag 'Search', class: 'btn btn-success text-light' %>
-      <% end %>
-    </div>
-
-
     <div class="card mt-5">
       <h4 class="p-4">Income Stats grouped by month</h4>
       <%= column_chart Income.group_by_month(:created_at).count %>
