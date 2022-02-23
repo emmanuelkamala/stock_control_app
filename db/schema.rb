@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_23_043342) do
+ActiveRecord::Schema.define(version: 2022_02_23_045756) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2022_02_23_043342) do
     t.bigint "type_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "unit_price"
     t.index ["type_id"], name: "index_expenses_on_type_id"
   end
 
@@ -55,6 +56,7 @@ ActiveRecord::Schema.define(version: 2022_02_23_043342) do
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "unit_price"
   end
 
   create_table "statuses", force: :cascade do |t|
