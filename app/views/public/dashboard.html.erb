@@ -11,7 +11,9 @@
         <h6 class="text-center card-header">Total Current Flock</h6>
         <span class="text-center p-3"><strong><%= Flock.sum(:current_stock) %></strong></span>
       </div>
+    </div>
 
+    <div class="row">
       <div class="card col-sm-2 me-1">
         <h6 class="text-center card-header">Total Income</h6>
         <span class="text-center p-3">
@@ -25,6 +27,9 @@
           <strong><%= number_to_currency(@expenses.map(&:total).sum, :unit => "shs. ", :delimiter => ",") %></strong>
         </span>
       </div>
+    </div>
+
+    <div class="row">
 
       <div class="card col-sm-2 me-1">
         <h6 class="text-center card-header">Profit</h6>
@@ -55,16 +60,6 @@
 
         </span>
       </div>
-
-    <div class="card mt-5">
-      <h4 class="p-4">Income Stats</h4>
-      <%= column_chart Income.group_by_day(:created_at).count %>
     </div>
-
-    <div class="card mt-5">
-      <h4 class="p-4">Expenses Stats</h4>
-      <%= column_chart Expense.group_by_day(:created_at).count %>
-    </div>
-
   <div>
 </div>
