@@ -1,3 +1,8 @@
 measure: income
+filters:
+- key: created_at
+  criteria:
+    operator: between
+    value: -3M - now
 dimensions:
-- created_at
+- total_income
