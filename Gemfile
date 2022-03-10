@@ -15,6 +15,7 @@ gem 'sass-rails', '>= 6'
 gem "chartkick"
 gem 'groupdate'
 gem 'highcharts-rails'
+gem 'active_period'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker', '~> 5.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

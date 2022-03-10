@@ -5,14 +5,13 @@ class PublicController < ApplicationController
   end
 
   def dashboard 
-    @incomes = Income.all 
+    @incomes = Income.all
     @expenses = Expense.all
     @flocks = Flock.all
   end
 
   def financial
-    # @search = IncomeSearch.new(params[:search])
-    # @incomes = @search.scope
+    @incomes = Income.created_between(1.year.ago, Time.now)
   end
 
   def production

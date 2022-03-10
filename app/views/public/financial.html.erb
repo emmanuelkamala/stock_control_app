@@ -10,13 +10,31 @@
    
     <div class="card mt-3">
       <h4 class="p-4">Income Stats in the last 30 days</h4>
-      
+      <%= form_for :income, method: :get do |f| %>
+        <div class="row justify-content-center">
+          <div class="field col-md-3 mb-3">
+            <%= f.label :start_date %>
+            <%= f.date_field :start_date, value: @start, class: 'form-control' %>
+          </div>
+
+          <div class="field col-md-3 mb-3">
+            <%= f.label :end_date %>
+            <%= f.date_field :end_date, value: @end, class: 'form-control' %>
+          </div>
+
+          <div class="actions col-md-3 mt-4">
+            <%= f.submit 'Search', class: 'btn btn-success' %>
+          </div>
+        <div>
+      <% end %>
     </div>
 
+    
     <div class="card mt-5">
-      <h4 class="p-4">Income Stats grouped by month</h4>
-      <%= column_chart Income.group_by_month(:created_at).count %>
+      <%= pie_chart Income.group_by_week(:created_at).count %>
     </div>
 
   <div>
 </div>
+
+

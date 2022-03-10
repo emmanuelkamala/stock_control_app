@@ -4,37 +4,35 @@
     <%= render 'layouts/sidebar' %>
   </div>
 
-  <div class="col-9 mt-5">
-    <h3 class="display-6">Summary in the last 30 days</h3>
+  <div class="col-md-9 mt-5">
+    <h3 class="display-6 mb-4">Summary</h3>
     <div class="row">
       <div class="card col-sm-2 me-1">
         <h6 class="text-center card-header">Total Current Flock</h6>
         <span class="text-center p-3"><strong><%= Flock.sum(:current_stock) %></strong></span>
       </div>
-    </div>
+    
 
-    <div class="row">
-      <div class="card col-sm-2 me-1">
+    
+      <div class="card col-3 me-1">
         <h6 class="text-center card-header">Total Income</h6>
         <span class="text-center p-3">
-          <strong><%= number_to_currency(@incomes.map(&:amount).sum, :unit => "shs ", :delimiter => ",") %></strong>
+          <strong><%= number_to_currency(@incomes.map(&:amount).sum, :unit => "Tshs. ", :delimiter => ",") %></strong>
         </span>
       </div>
 
-      <div class="card col-sm-2 me-1">
+      <div class="card col-3 me-1">
         <h6 class="text-center card-header">Total Expenses</h6>
         <span class="text-center p-3">
-          <strong><%= number_to_currency(@expenses.map(&:total).sum, :unit => "shs. ", :delimiter => ",") %></strong>
+          <strong><%= number_to_currency(@expenses.map(&:total).sum, :unit => "Tshs. ", :delimiter => ",") %></strong>
         </span>
       </div>
-    </div>
+    
 
-    <div class="row">
-
-      <div class="card col-sm-2 me-1">
+    
+      <div class="card col-sm-3">
         <h6 class="text-center card-header">Profit</h6>
         <span class="text-center p-3">
-
           <% if @incomes.map(&:amount).sum > @expenses.map(&:total).sum %>
             <span class="text-success">
               <strong><%= number_to_currency(@incomes.map(&:amount).sum - @expenses.map(&:total).sum, :unit => "Tshs. ") %><strong>
@@ -42,14 +40,12 @@
           <% else %>
             <span class="text-danger"><strong> 0</strong></span>
           <% end %>
-
         </span>
       </div>
 
-      <div class="card col-sm-2">
+      <div class="card col-sm-3 mt-3">
         <h6 class="text-center card-header">Loss</h6>
         <span class="text-center p-3">
-
           <% if @incomes.map(&:amount).sum < @expenses.map(&:total).sum %>
             <span class="text-danger">
               <strong><%= number_to_currency(@expenses.map(&:total).sum - @incomes.map(&:amount).sum, :unit => "Tshs. ")  %><strong>
@@ -57,9 +53,9 @@
           <% else %>
             <span class="text-success"><strong>0</strong></span>
           <% end %>
-
         </span>
       </div>
     </div>
+
   <div>
 </div>
