@@ -14,8 +14,5 @@ Rails.application.routes.draw do
   get 'dashboard', to: 'public#dashboard'
   get 'financial', to: 'public#financial'
   get 'production', to: 'public#production'
-
-  
-  mount ReportsKit::Engine, at: '/'
   
 end
