@@ -29,7 +29,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'devise'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
-gem 'reports_kit'
+#gem 'reports_kit'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap-style'
 
